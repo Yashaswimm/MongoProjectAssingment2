@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="invoiceTemplate" pageWidth="595" pageHeight="842" columnWidth="555"
+              uuid="ff8f44b6-78f5-4239-a1f4-51b6bbfd6c9f">
+    <parameter name="invoiceNumber" class="java.lang.String"/>
+    <parameter name="paymentDate" class="java.lang.String"/>
+    <parameter name="vendorName" class="java.lang.String"/>
+
+    <background>
+        <band splitType="Stretch">
+        </band>
+    </background>
+
+    <title>
+        <band height="80">
+            <textField>
+                <reportElement x="0" y="0" width="555" height="30"/>
+                <textFieldExpression><![CDATA["Invoice for: " + $P{invoiceNumber}]]></textFieldExpression>
+
+            </textField>
+            <line>
+                <reportElement x="0" y="30" width="555" height="1"/>
+            </line>
+            <textField>
+                <reportElement x="0" y="40" width="555" height="30"/>
+                <textFieldExpression><![CDATA["Payment Date: " + $P{paymentDate}]]></textFieldExpression>
+
+            </textField>
+            <textField>
+                <reportElement x="0" y="60" width="555" height="30"/>
+                <textFieldExpression><![CDATA["Vendor Name: " + $P{vendorName}]]></textFieldExpression>
+
+            </textField>
+        </band>
+    </title>
+
+    <detail>
+        <band height="20">
+            <!-- Add more detail fields here if needed -->
+        </band>
+    </detail>
+
+    <pageFooter>
+        <band height="50">
+            <textField>
+                <reportElement x="0" y="0" width="555" height="20"/>
+                <textFieldExpression><![CDATA["Thank you for your business!"]]></textFieldExpression>
+
+            </textField>
+        </band>
+    </pageFooter>
+</jasperReport>
